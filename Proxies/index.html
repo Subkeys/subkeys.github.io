@@ -9,6 +9,22 @@
 
 </head>
 <body>
+
+        <script>
+  document.addEventListener("keydown", keyDownBody, false);
+
+  function keyDownBody(e) {
+    var keyCode = e.keyCode;
+    if(keyCode==115) {
+      myFunction();
+    }
+  }
+  function myFunction() {
+  location.replace("https://lms.fcps.edu/home")
+
+    document.body.insertBefore(x,document.body.firstElementChild);
+  }
+</script>
 <!-- partial:index.partial.html -->
 <main class="site-wrapper">
   <div class="pt-table desktop-768">
