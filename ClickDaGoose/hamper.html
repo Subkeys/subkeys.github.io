@@ -12,13 +12,13 @@
 </body>
 
 <script>
-    let count = localStorage.getItem('count') ? parseInt(localStorage.getItem('count')) : 0;
-    document.getElementById("countDisplay").innerHTML = "Count: " + count;
+    let GyattSize = localStorage.getItem('GyattSize') ? parseInt(localStorage.getItem('GyattSize')) : 0;
+    document.getElementById("countDisplay").innerHTML = "GyattSize: " + GyattSize;
     
     function increaseCount() {
       count++;
-      localStorage.setItem('count', count);
-      document.getElementById("countDisplay").innerHTML = "Count: " + count;
+      localStorage.setItem('GyattSize', GyattSize);
+      document.getElementById("countDisplay").innerHTML = "GyattSize: " + GyattSize;
     }
     </script>
     
