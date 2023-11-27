@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>Click Da Hamper?</title>
+</head>
+<body>
+    <h1>CLICK DA hamper?</h1>
+    <h3>To play you just click da hamper if thats too hard for you then yur stupid</h3>
+    <button onclick="increaseCount()"><img width="300px" height="300px" src="https://pinekeys.github.io/ClickDaGoose/hamp.png"></button>
+    <p id="countDisplay"></p>
+    <h4>Made by HAMPER</h4>
+
+</body>
+
+<script>
+    let count = localStorage.getItem('count') ? parseInt(localStorage.getItem('count')) : 0;
+    document.getElementById("countDisplay").innerHTML = "Count: " + count;
+    
+    function increaseCount() {
+      count++;
+      localStorage.setItem('count', count);
+      document.getElementById("countDisplay").innerHTML = "Count: " + count;
+    }
+    </script>
+    
