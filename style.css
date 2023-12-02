@@ -6,7 +6,9 @@ body {
   background-color: #0c0f15;
   overflow-x:hidden;
   color: #ababab; }
-
+#anc {
+color: green
+}
 ::-webkit-scrollbar {
     width: 10px;
     background-color: #F5F5F5;
