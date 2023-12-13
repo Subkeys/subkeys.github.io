@@ -1,50 +1,41 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Blurr Browser</title>
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 </head>
 <body class="body">
-    
-<!--<button style="background-color: #0066ff; color: black;"><div class="square">Test</div></button> use for button-->
 <div class="topnav">
-    
     <input class="center" id="searchInput" type="text" placeholder="Search or change background"> 
-    
     <button onclick="performSearch()">Search</button>
     <button onclick="startproxy()">Proxy</button>
     <button onclick="changebg()">Change Background</button>
-    
-    
 </div>
-   
-    
-    <script>
-        document.body.style.backgroundImage = "url('https://subkeys.github.io/WOW/ezgif-1-314fe6f0d9.gif')";
-    </script>
-    
-    <script>
-        window.onload = function () {
+
+<script>
+    document.body.style.backgroundImage = "url('https://subkeys.github.io/WOW/ezgif-1-314fe6f0d9.gif')";
+</script>
+
+<script>
+    window.onload = function () {
         var savedBackground = localStorage.getItem("backgroundImage");
         if (savedBackground) {
             document.body.style.backgroundImage = "url('" + savedBackground + "')";
             document.getElementById("searchInput").value = savedBackground;
         }
-    </script>
+    };
+</script>
 
-    
-    <script>
+<script>
     function changebg() {
         const input = document.getElementById("searchInput").value;
         document.body.style.backgroundImage = "url('" + input + "')";
         localStorage.setItem("backgroundImage", input);
     }
-
-    
 </script>
-    
+
 <script>
     function startproxy() {
         const searchQuery = document.getElementById("searchInput").value;
@@ -64,3 +55,4 @@
     }
 </script>
 </body>
+</html>
