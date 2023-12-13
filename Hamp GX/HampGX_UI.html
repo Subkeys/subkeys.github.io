@@ -19,14 +19,27 @@
     
     
 </div>
+   
+    
     <script>
         document.body.style.backgroundImage = "url('https://subkeys.github.io/WOW/ezgif-1-314fe6f0d9.gif')";
     </script>
+    
+    <script>
+        window.onload = function () {
+        var savedBackground = localStorage.getItem("backgroundImage");
+        if (savedBackground) {
+            document.body.style.backgroundImage = "url('" + savedBackground + "')";
+            document.getElementById("searchInput").value = savedBackground;
+        }
+    </script>
 
+    
     <script>
     function changebg() {
         const input = document.getElementById("searchInput").value;
         document.body.style.backgroundImage = "url('" + input + "')";
+        localStorage.setItem("backgroundImage", input);
     }
 
     
