@@ -27,7 +27,7 @@ body::before {
     height: 100%;
     z-index: -1;
     font-family: Titillium Web, sans-serif;
-    background-image: url(https://subkeys.github.io/WOW/ezgif-1-314fe6f0d9.gif)
+    background-image: url(https://subkeys.github.io/WOW/ezgif-1-314fe6f0d9.gif);
     background-size: cover;
     background-repeat: no-repeat;
 }
