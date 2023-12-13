@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Blurr Browser</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="body">
+<!--<button style="background-color: #0066ff; color: black;"><div class="square">Test</div></button> use for button-->
+<div class="topnav">
+    
+    <input class="center" id="searchInput" type="text" placeholder="Search.."> 
+    <button onclick="performSearch()">Search</button>
+    
+</div>
+<script>
+    function performSearch() {
+        const searchQuery = document.getElementById("searchInput").value;
+        if (searchQuery.trim() !== "") {
+            // Redirect to Bing search results page
+            window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(searchQuery)}`;
+        }
+    }
+</script>
+</body>

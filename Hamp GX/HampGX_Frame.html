@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="TheTabs.css">
+    <title>Blurr Browser</title>
+    <style>
+        /* Basic styling for the tab bar */
+        .tab-bar {
+            display: flex;
+            background-color: darkblue;
+            border-bottom: 1px solid #8240da;
+            height: 50px; /* Adjust the height as needed */
+        }
+
+        /* Style for individual tabs */
+        .tab {
+            padding: 10px 20px;
+            border-radius: 5px 5px 0 0;
+            margin-right: 10px;
+            background-color: #3355c4;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        /* Active tab style */
+        .tab.active {
+            background-color: #191a47; /* Darker color for active tab */
+            color: #fff; /* White text for better visibility */
+        }
+
+        /* Fullscreen content */
+        .tab-content {
+            display: none;
+            position: absolute;
+            top: 50px; /* Adjust to match tab bar height */
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 50px); /* Adjust to account for tab bar height */
+            background-color: #3355c4;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-bar">
+        <div class="tab active" data-tab="tab-content-1">Tab 1</div>
+        <div class="tab" data-tab="tab-content-2">Tab 2</div>
+        <div class="tab" data-tab="tab-content-3">Tab 3</div>
+        <div class="tab" data-tab="tab-content-4">Tab 4</div>
+        <div class="tab" data-tab="tab-content-5">Tab 5</div>
+        <div class="tab" data-tab="tab-content-6">Tab 6</div>
+        <!-- Add more tabs as needed -->
+    </div>
+
+    <!-- Content for each tab goes here -->
+    <div id="tab-content-1" class="tab-content">
+        <!-- Content for Tab 1 -->
+        <iframe src="HampGX_UI.html" title="Iframe Example" style="position:fixed; top: 50px; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+    </div>
+    <div id="tab-content-2" class="tab-content">
+        <!-- Content for Tab 2 -->
+        <iframe src="HampGX_UI.html" title="Iframe Example" style="position:fixed; top: 50px; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+    </div>
+    <div id="tab-content-3" class="tab-content">
+        <!-- Content for Tab 2 -->
+        <iframe src="HampGX_UI.html" title="Iframe Example" style="position:fixed; top: 50px; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+    </div>
+    <div id="tab-content-4" class="tab-content">
+        <!-- Content for Tab 2 -->
+        <iframe src="HampGX_UI.html" title="Iframe Example" style="position:fixed; top: 50px; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+    </div>
+    <div id="tab-content-5" class="tab-content">
+        <!-- Content for Tab 2 -->
+        <iframe src="HampGX_UI.html" title="Iframe Example" style="position:fixed; top: 50px; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+    </div>
+    <div id="tab-content-6" class="tab-content">
+        <!-- Content for Tab 2 -->
+        <iframe src="HampGX_UI.html" title="Iframe Example" style="position:fixed; top: 50px; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+    </div>
+    <h1 style="color:white;">Welcome, click on one of the tabs to begin.</h1>
+    <h1 style="color:white;">This is a search hider not a proxy.</h1>
+    <h1 style="color:green;">Made by HAMPER</h1>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Hide all tab contents
+                    tabContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+
+                    // Show the content associated with the clicked tab
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).style.display = 'block';
+
+                    // Update active tab styling
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
