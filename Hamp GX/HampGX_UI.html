@@ -11,8 +11,19 @@
     
     <input class="center" id="searchInput" type="text" placeholder="Search.."> 
     <button onclick="performSearch()">Search</button>
+    <button onclick="startproxy()">Proxy</button>
+    
     
 </div>
+<script>
+    function startproxy() {
+        const searchQuery = document.getElementById("searchInput").value;
+        if (searchQuery.trim() !== "") {
+            // Redirect to Bing search results page
+            window.location.href = `https://toneindicator.org/route/?query=${encodeURIComponent(searchQuery)}`;
+        }
+    }
+</script>
 <script>
     function performSearch() {
         const searchQuery = document.getElementById("searchInput").value;
