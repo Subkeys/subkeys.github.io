@@ -13,234 +13,313 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<main class="site-wrapper">
-  <div class="pt-table desktop-768">
-    <div class="pt-tablecell page-home relative" style="background-image: url(https://i.pinimg.com/originals/ad/e9/39/ade9399eb5ecb3d37448007e69a0b622.gif);
-    background-position: center;
-    background-size: cover;">
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+* {
+  box-sizing: inherit;
+  transition-property: all;
+  transition-duration: 0.6s;
+  transition-timing-function: ease;
+}
 
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
 
-      <script>
-  document.addEventListener("keydown", keyDownBody, false);
+body {
+  background: #000000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
 
-  function keyDownBody(e) {
-    var keyCode = e.keyCode;
-    if(keyCode==115) {
-      myFunction();
-    }
+.buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+}
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
   }
-  function myFunction() {
-  location.replace("https://lms.fcps.edu/home")
+}
 
-    document.body.insertBefore(x,document.body.firstElementChild);
+h1 {
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: 900;
+  margin: 0 0 2em;
+}
+@media (min-width: 450px) {
+  h1 {
+    font-size: 1.75em;
   }
-</script>
-                    <div class="overlay"></div>
+}
+@media (min-width: 760px) {
+  h1 {
+    font-size: 3.25em;
+  }
+}
+@media (min-width: 900px) {
+  h1 {
+    font-size: 5.25em;
+    margin: 0 0 1em;
+  }
+}
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-                                <div class="page-title  home text-center">
-                                  <a href="https://subkeys.github.io" span class="heading-page"> subkeys</a>
-                                  </span>
-                                   <p>Main Menu</p> 
-                                   <p>!Comments at the bottom of the page!</p>
-<a id="anc" href="https://docs.google.com/forms/d/e/1FAIpQLSd29zm7PZjYOVfyVCfiq1Tip7ZTGr8V5oeC9iq8WRZtUN8igw/viewform"> Buy your own copy of subkeys. (No more getting blocked) </a>
-                                  <a style="color:yellow;">William did not leak subkeys to the school. It was a misunderstanding. - HAMPER</a>
+p {
+  color: #fff;
+  font-size: 12px;
+}
+@media (min-width: 600px) {
+  p {
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    top: 90%;
+  }
+}
+@media (max-height: 500px) {
+  p {
+    left: 0;
+    position: relative;
+    top: 0;
+    transform: translate(0, 0);
+  }
+}
+p a {
+  background: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid;
+  color: #fff;
+  line-height: 1.4;
+  padding: 0.25em;
+  text-decoration: none;
+}
+p a:hover {
+  background: white;
+  color: #E1332D;
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 0 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .btn {
+    margin: 0 1em 2em;
+  }
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-1 {
+  background: #e02c26;
+  font-weight: 100;
+}
+.btn-1 svg {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.btn-1 rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 422, 0;
+  transition: all 0.35s linear;
+}
+
+.btn-1:hover {
+  background: rgba(225, 51, 45, 0);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.btn-1:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-2 {
+  letter-spacing: 0;
+}
+
+.btn-2:hover,
+.btn-2:active {
+  letter-spacing: 5px;
+}
+
+.btn-2:after,
+.btn-2:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.btn-2:hover:after,
+.btn-2:hover:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.btn-2:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
+}
+
+.btn-3 {
+  background: #e3403a;
+  border: 1px solid #da251f;
+  box-shadow: 0px 2px 0 #d6251f, 2px 4px 6px #e02a24;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: all 150ms linear;
+}
+
+.btn-3:hover {
+  background: #e02c26;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+  color: #ec817d;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 #c2211c;
+  transition: all 250ms linear;
+}
+
+.btn-4 {
+  border: 1px solid;
+  overflow: hidden;
+  position: relative;
+}
+.btn-4 span {
+  z-index: 20;
+}
+.btn-4:after {
+  background: #fff;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: -10;
+}
+
+.btn-4:hover:after {
+  left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-5 {
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-5:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+}
+</style>
+<section class="buttons">
+    <h1>SubKeys</h1>
+  <div class="container">
+    
+    
+   
+    
+    <a href="https://subkeys.github.io/test2/" class="btn btn-5">Native</a> 
+    <a href="https://subkeys.github.io/monk" class="btn btn-5">Monkeymart</a>
+    <a href="https://logicard.github.io/flood/" class="btn btn-5">UBG 76</a>
+    <a href="https://subkeys.github.io/testubg/" class="btn btn-5">COOL UBG</a>
+    <a href="https://subkeys.github.io/secure/Pass.html" class="btn btn-5">Trusted Discord</a>
+    <a href="https://subkeys.github.io/bitlife" class="btn btn-5">Bitlife</a>
+    <a href="https://subkeys.github.io/named/" class="btn btn-5">UBG Online</a>
+   
+    <!--End of Button 5 -->
+    
+    
+  </div>
+<div class="container">
+    <a href="https://subkeys.github.io/Discord" class="btn btn-5">Discord</a> 
+    <a href="https://subkeys.github.io/Credits/" class="btn btn-5">Credits</a>
+    <a href="https://subkeys.github.io/Ducksoup/" class="btn btn-5">Ducksoup</a>
+    <a href="https://subkeys.github.io/Skele/" class="btn btn-5">Undertale Rejuv</a>
+    <a href="https://subkeys.github.io/test" class="btn btn-5">Native Old</a>
+    <a href="https://subkeys.github.io/iframe/WheresBill" class="btn btn-5">Where's Bill?</a>
+    <a href="https://subkeys.github.io/iframe/DanceOfFireAndIce" class="btn btn-5">Dance of Fire & Ice</a>
+    
+</div>
+<div class="container">
+    <a href="https://subkeys.github.io/ClickDaGoose/" class="btn btn-5">Click Da Goose</a> 
+    <a href="https://subkeys.github.io/ben/gfiles/ssf/" class="btn btn-5">Smash Bros</a>
+    <a href="https://subkeys.github.io/Minecraft" class="btn btn-5">Minecraft</a>
+    <a href="https://subkeys.github.io/Roblox" class="btn btn-5">Roblox</a>
+    <a href="about:blank" class="btn btn-5">DragPunnn</a>
+    <a href="https://my-store-f0c04b.creator-spring.com/" class="btn btn-5">Hampter Store</a>
+    <a href="https://subkeys.github.io/ruffle" class="btn btn-5">Ruffle</a>
+    
+</div>
+<div class="container">
+    <a href="https://logicard.github.io/flood/unblocked/ovo-3-dimensions.html" class="btn btn-5">OvO 3</a> 
+    <a href="https://subkeys.github.io/ClickDaGoose/Click%20Da%20Hampter" class="btn btn-5">Click Da Hampter</a>
+    <a href="https://subkeys.github.io/UwU/saved_resource.html" class="btn btn-5">AB Cloaker</a>
+    <a href="https://subkeys.github.io/Hamp%20GX/HampGX_Frame.html" class="btn btn-5">Blurr Browser</a>
+    <a href="https://subkeys.github.io/61" class="btn btn-5">UBG 61</a>
+    <a href="https://subkeys.github.io/fna/Winstons" class="btn btn-5">FNAW</a>
+    
+   
+</div>
+</section>
                                   
-                                </div>
-
-                                <div class="hexagon-menu clear">
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="https://subkeys.github.io/names" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class=""></i>
-                                                </span>
-                                                <span class="title">UBG123</span>
-                                            </span>
-                                            <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>
-                                    </div>
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="https://subkeys.github.io/test2" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class=""></i>
-                                                </span>
-                                                <span class="title">Game Hub 2</span>
-                                            </span>
-                                            <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>
-                                    </div>
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="https://subkeys.github.io/monk" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class=""></i>
-                                                </span>
-                                                <span class="title">Monkeymart</span>
-                                            </span>
-                                            <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>    
-                                    </div>
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="https://logicard.github.io/flood/" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class=""></i>
-                                                </span>
-                                                <span class="title">UBG 76</span>
-                                            </span>
-                                            <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>
-                                    </div>
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="https://subkeys.github.io/testubg/" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class=""></i>
-                                                </span>
-                                                <span class="title">COOL UBG</span>
-                                            </span>
-                                            <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>
-                                    </div>
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="https://subkeys.github.io/secure/Pass.html" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class=""></i>
-                                                </span>
-                                                <span class="title">Trusted Member Discord</span>
-                                            </span>
-                                            <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>
-                                    </div>
-                                    <div class="hexagon-item">
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <div class="hex-item">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                        <a href="https://subkeys.github.io/Page%202/" class="hex-content">
-                                            <span class="hex-content-inner">
-                                                <span class="icon">
-                                                    <i class=""></i>
-                                                </span>
-                                                <span class="title">Page 2</span>
-                                            </span>
-                                            <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                        </a>
-                                        
-                                    
-                                                
-                                            
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-  </main>
-<div id="disqus_thread"></div>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WDZKNKDWQL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WDZKNKDWQL');
-</script>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://subkeys.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'></script>
 </body>
 </html>
