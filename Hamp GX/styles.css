@@ -4,6 +4,12 @@
     background-color: #0066ff;
 }
 
+/* Add a CSS class for the blur effect */
+.blur {
+    /* Apply the blur filter */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
 
 
 .center {
