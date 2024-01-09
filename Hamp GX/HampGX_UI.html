@@ -58,18 +58,38 @@
 </script>
 <!-- Add a script to toggle the blur class -->
 <script>
-    function toggleBlur() {
-        // Get the body element
-        var body = document.querySelector("body");
-        // Check if the body has the blur class
-        if (body.classList.contains("blur")) {
-            // Remove the blur class
-            body.classList.remove("blur");
-        } else {
-            // Add the blur class
-            body.classList.add("blur");
-        }
+   // Store the user's choice of blur on and off
+function toggleBlur() {
+    // Get the body element
+    var body = document.querySelector("body");
+    // Check if the body has the blur class
+    if (body.classList.contains("blur")) {
+        // Remove the blur class
+        body.classList.remove("blur");
+        // Store the user's choice as "off"
+        localStorage.setItem("blurEffect", "off");
+    } else {
+        // Add the blur class
+        body.classList.add("blur");
+        // Store the user's choice as "on"
+        localStorage.setItem("blurEffect", "on");
     }
+}
+
+// Check the user's choice of blur on and off when the page loads
+window.onload = function () {
+    // Get the user's choice from the local storage
+    var blurChoice = localStorage.getItem("blurEffect");
+    // Get the body element
+    var body = document.querySelector("body");
+    // Check if the user's choice is "on"
+    if (blurChoice === "on") {
+        // Add the blur class to the body
+        body.classList.add("blur");
+    }
+    // Otherwise, do nothing
+};
+
 </script>
 </body>
 </html>
