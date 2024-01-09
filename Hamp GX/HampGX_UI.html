@@ -12,6 +12,8 @@
     <button onclick="performSearch()">Search</button>
     <button onclick="startproxy()">Proxy</button>
     <button onclick="changebg()">Change Background</button>
+    <!-- Add a button to toggle the blur effect -->
+    <button onclick="toggleBlur()">Toggle Blur</button>
 </div>
 
 <script>
@@ -51,6 +53,21 @@
         if (searchQuery.trim() !== "") {
             // Redirect to Bing search results page
             window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(searchQuery)}`;
+        }
+    }
+</script>
+<!-- Add a script to toggle the blur class -->
+<script>
+    function toggleBlur() {
+        // Get the body element
+        var body = document.querySelector("body");
+        // Check if the body has the blur class
+        if (body.classList.contains("blur")) {
+            // Remove the blur class
+            body.classList.remove("blur");
+        } else {
+            // Add the blur class
+            body.classList.add("blur");
         }
     }
 </script>
