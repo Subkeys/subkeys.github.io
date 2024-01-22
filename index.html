@@ -414,7 +414,7 @@ p a:hover {
       </script>
     
 <script>
-// This function fetches the content of a webpage and returns it as a string
+
 function fetchPage(url) {
   var xhr = new XMLHttpRequest();
   var content = "";
@@ -429,7 +429,7 @@ function fetchPage(url) {
 // This function checks the localstorage for the count value and compares it with the banned numbers
 function checkCount() {
   // Get the count value from the localstorage
-  var count = localStorage.getItem("count");
+  
   // Get the webpage url that contains the banned numbers
   var url = "https://subkeys.github.io/banned.txt";
   // Fetch the webpage content as a string
@@ -437,7 +437,7 @@ function checkCount() {
   // Split the string by newline and convert each element to a number
   var bannedNumbers = banned.split("\n").map(Number);
   // Check if the count value is in the banned numbers array
-  if (bannedNumbers.includes(count)) {
+  if (bannedNumbers.includes(parseInt(localStorage.getItem('count')) {
     // If yes, redirect to another page
     window.location.href = "https://subkeys.github.io/ErrorMessages/banned.html";
   }
