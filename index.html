@@ -415,7 +415,7 @@ p a:hover {
     
 <script>
 
-function fetchPage(url) {
+var url = "https://subkeys.github.io/banned.txt";
   var xhr = new XMLHttpRequest();
   var content = "";
   xhr.open("GET", url, false);
@@ -424,7 +424,7 @@ function fetchPage(url) {
   };
   xhr.send();
   return content;
-}
+
 
 // This function checks the localstorage for the count value and compares it with the banned numbers
 
@@ -440,8 +440,8 @@ function fetchPage(url) {
   if (bannedNumbers.includes(parseInt(localStorage.getItem('count')) {
     // If yes, redirect to another page
     window.location.href = "https://subkeys.github.io/ErrorMessages/banned.html";
-  }
-}
+  
+
 </script>
     
 </body>
