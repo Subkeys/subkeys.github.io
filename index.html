@@ -417,22 +417,32 @@ if (!localStorage.getItem('user')) {
 let user = localStorage.getItem('user')
 document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
 
-async function checkBanned() {
-    try {
-        const response = await fetch('https://subkeys.github.io/banned.txt');
-        const data = await response.text();
-        
-        let bannedUsers = data.split('\n');
-        
-        if (bannedUsers.includes(user)) {
-            window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
-        }
-    } catch (error) {
-        console.error('Error fetching or processing data:', error);
+fetch('https://subkeys.github.io/banned.txt')
+  .then(response => response.text())
+  .then(data => {
+    const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
+
+    // Check if any line matches the user value
+    const match = textLines.find(line => line.trim() === user);
+
+    if (match) {
+      // Redirect to another page
+      window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
+    } else {
+      console.log('User not found in the text file');
     }
+  })
+  .catch(error => console.error('Error fetching data:', error));
+          
+function extractTextFromHTML(html) {
+  // Use DOM manipulation or regular expressions to extract text from HTML
+  // Example: return text inside paragraphs
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  const paragraphs = doc.querySelectorAll('p');
+  return Array.from(paragraphs).map(p => p.textContent).join('\n');
 }
 
-checkBanned();
     
 
 
