@@ -12,7 +12,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5894748656496396"
      crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="checkCount()">
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
 * {
@@ -411,6 +411,38 @@ p a:hover {
           let count = localStorage.getItem('count') ? parseInt(localStorage.getItem('count')) : Math.floor(Math.random() * (99999 - 1 + 1)) + 1;
     document.getElementById("countDisplay").innerHTML = "Welcome User " + count;
     localStorage.setItem('count', count);
-      </script>                            
+      </script>
+    
+<script>
+// This function fetches the content of a webpage and returns it as a string
+function fetchPage(url) {
+  var xhr = new XMLHttpRequest();
+  var content = "";
+  xhr.open("GET", url, false);
+  xhr.onload = function() {
+    content = xhr.responseText;
+  };
+  xhr.send();
+  return content;
+}
+
+// This function checks the localstorage for the count value and compares it with the banned numbers
+function checkCount() {
+  // Get the count value from the localstorage
+  var count = localStorage.getItem("count");
+  // Get the webpage url that contains the banned numbers
+  var url = "https://subkeys.github.io/banned.txt";
+  // Fetch the webpage content as a string
+  var banned = fetchPage(url);
+  // Split the string by newline and convert each element to a number
+  var bannedNumbers = banned.split("\n").map(Number);
+  // Check if the count value is in the banned numbers array
+  if (bannedNumbers.includes(count)) {
+    // If yes, redirect to another page
+    window.location.href = "https://subkeys.github.io/ErrorMessages/banned.html";
+  }
+}
+</script>
+    
 </body>
 </html>
