@@ -411,9 +411,13 @@ p a:hover {
           
           let max = 99999;
           let min = 1;
-          localStorage.setItem('user', Math.floor(Math.random() * (max - min + 1)) + min);
+           if (!localStorage.getItem('user')) {
+              localStorage.setItem('user', Math.floor(Math.random() * (99999 - 1 + 1)) + 1);
+          }
+          let user = localStorage.getItem('user')
           let use = 'localstorage test'
-          document.getElementById("userDisplay").innerHTML = "Welcome User " + use;
+          document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
+         
 
 
           
