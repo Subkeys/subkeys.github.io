@@ -408,9 +408,13 @@ p a:hover {
    
 </section>
       <script>
-          let user = localStorage.getItem('user') ? parseInt(localStorage.getItem('user')) : Math.floor(Math.random() * (99999 - 1 + 1)) + 1;
+           if (!localStorage.getItem('user')) {
+    localStorage.setItem('user', Math.floor(Math.random() * (99999 - 1 + 1)) + 1);
+}
+
+          
     document.getElementById("countDisplay").innerHTML = "Welcome User " + user;
-    localStorage.setItem('user', user);
+   
       </script>
     
 <script>
