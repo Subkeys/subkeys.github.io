@@ -414,13 +414,11 @@ p a:hover {
       </script>
     
 <script>
-
-    var banned = "https://subkeys.github.io/banned.txt";
-    var ban = banned.split('/n');
-    if ban == parseInt(localStorage.getItem('count')): // use a comparison operator
-    window.location.assign("https://subkeys.github.io/ErrorMessages/banned.html") // use the assign method
-
-</script>
+    var userId = localStorage.getItem("count");
+    var bannedUrl = "https://subkeys.github.io/banned.txt";
+    var redirect = "https://subkeys.github.io/ErrorMessages/banned.html"
+    function checkBanned(id) { axios.get(bannedUrl) .then(function (response) { if (response.status === 0) { return false; } for (var i = 0; i < response.data.length; i++) { if (response.data[i].id === id) { return true; } } return false; }) .catch(function (error) { console.error(error); return false; }); } function redirect() { var result = checkBanned(userId); if (result) { window.location.href = “7”; } } window.onload = redirect;
+</script>>
     
 </body>
 </html>
