@@ -409,15 +409,22 @@ p a:hover {
 </section>
       <script>
           
-          let max = 99999;
-          let min = 1;
-           if (!localStorage.getItem('user')) {
-              localStorage.setItem('user', Math.floor(Math.random() * (99999 - 1 + 1)) + 1);
-          }
-          let user = localStorage.getItem('user')
-          let use = 'localstorage test'
-          document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
-         
+         let max = 99999;
+let min = 1;
+if (!localStorage.getItem('user')) {
+    localStorage.setItem('user', Math.floor(Math.random() * (max - min + 1)) + min);
+}
+let user = localStorage.getItem('user')
+document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
+
+fetch('https://subkeys.github.io/banned.txt')
+    .then(response => response.text())
+    .then(data => {
+        let bannedUsers = data.split('\n'); // assuming each user is on a new line
+        if (bannedUsers.includes(user)) {
+            window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
+        }
+    });
 
 
           
