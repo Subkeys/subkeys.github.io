@@ -408,10 +408,11 @@ p a:hover {
    
 </section>
       <script>
-          document.getElementById("countDisplay").innerHTML = "Welcome User " + user;
+          document.getElementById("countDisplay").innerHTML = "Welcome User " + use;
           let max = 99999;
           let min = 1;
           localStorage.setItem('user', Math.floor(Math.random() * (max - min + 1)) + min);
+          localStorage.setItem('use', "Test")
 
 
           
