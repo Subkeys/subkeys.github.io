@@ -414,11 +414,21 @@ p a:hover {
       </script>
     
 <script>
-    var userId = localStorage.getItem("count");
-    var bannedUrl = "https://subkeys.github.io/banned.txt";
-    var redirect = "https://subkeys.github.io/ErrorMessages/banned.html"
-    function checkBanned(id) { axios.get(bannedUrl) .then(function (response) { if (response.status === 0) { return false; } for (var i = 0; i < response.data.length; i++) { if (response.data[i].id === id) { return true; } } return false; }) .catch(function (error) { console.error(error); return false; }); } function redirect() { var result = checkBanned(userId); if (result) { window.location.href = “7”; } } window.onload = redirect;
-</script>>
+window.onload = function() {
+    fetch('https://subkeys.github.io/banned.txt')
+        .then(response => response.text())
+        .then(data => {
+            let lines = data.split('\n');
+            let count = localStorage.getItem('count');
+            if (lines.includes(count)) {
+                window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
+</script>
     
 </body>
 </html>
