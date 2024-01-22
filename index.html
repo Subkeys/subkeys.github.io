@@ -417,10 +417,8 @@ p a:hover {
 
     var banned = "https://subkeys.github.io/banned.txt";
     var ban = banned.split('/n');
-    if ban == parseInt(localStorage.getItem('count')):
-        window.location.href = "https://subkeys.github.io/ErrorMessages/banned.html";
-
-  
+    if ban == parseInt(localStorage.getItem('count')): // use a comparison operator
+    window.location.assign("https://subkeys.github.io/ErrorMessages/banned.html") // use the assign method
 
 </script>
     
