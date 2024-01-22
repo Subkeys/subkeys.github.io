@@ -329,6 +329,7 @@ p a:hover {
     <h3 style="color:white;" id="uidDisplay"></h3>
 <section class="buttons">
     <canvas height="185px"></canvas>
+    <h3 style="color:white;" id="uidDisplay"></h3>
     <h1>SubKeys</h1>
     <a href="https://discord.gg/4Er5DaBPyh"><h5 style="color:white;">Join my discord to boss me around (Suggest stuff) - HAMPER</h5></a>
     <div class="container">
@@ -394,7 +395,7 @@ p a:hover {
 </section>
       <script>
           let uid = localStorage.getItem('uid') ? parseInt(localStorage.getItem('uid')) : rand(1,100000000000000000000000000000000000000000000000000000000);
-          document.getElementById("uidDisplay").innerHTML = "uid: " + uid;
+          document.getElementById("uidDisplay").innerHTML = "Welcome User " + uid;
       </script>                            
 </body>
 </html>
