@@ -343,7 +343,7 @@ p a:hover {
     
 <section class="buttons">
     <canvas height="195px"></canvas>
-    <h3 style="color:white;" id="countDisplay"></h3>
+    <h3 style="color:white;" id="userDisplay"></h3>
     <h1>SubKeys</h1>
     <a href="https://discord.gg/4Er5DaBPyh"><h5 style="color:white;">Join my discord to boss me around (Suggest stuff) - HAMPER</h5></a>
     <div class="container">
@@ -408,9 +408,9 @@ p a:hover {
    
 </section>
       <script>
-          let count = localStorage.getItem('count') ? parseInt(localStorage.getItem('count')) : Math.floor(Math.random() * (99999 - 1 + 1)) + 1;
-    document.getElementById("countDisplay").innerHTML = "Welcome User " + count;
-    localStorage.setItem('count', count);
+          let user = localStorage.getItem('user') ? parseInt(localStorage.getItem('user')) : Math.floor(Math.random() * (99999 - 1 + 1)) + 1;
+    document.getElementById("countDisplay").innerHTML = "Welcome User " + user;
+    localStorage.setItem('user', user);
       </script>
     
 <script>
@@ -419,8 +419,8 @@ p a:hover {
         .then(response => response.text())
         .then(data => {
             let lines = data.split('\n');
-            let count = localStorage.getItem('count');
-            if (lines.includes(count)) {
+            let user = localStorage.getItem('user');
+            if (lines.includes(user)) {
                 window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
             }
         })
