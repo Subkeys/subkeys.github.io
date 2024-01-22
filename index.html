@@ -408,10 +408,10 @@ p a:hover {
    
 </section>
       <script>
-          
-            let max = 99999
-            let min = 1
-            localStorage.setItem('user', Math.floor(Math.random() * (max - min + 1)) + min);
+          document.getElementById("countDisplay").innerHTML = "Welcome User " + user
+          let max = 99999
+          let min = 1
+          localStorage.setItem('user', Math.floor(Math.random() * (max - min + 1)) + min);
 
 
           
