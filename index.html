@@ -417,13 +417,22 @@ if (!localStorage.getItem('user')) {
 let user = localStorage.getItem('user')
 document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
 
-fetch('https://subkeys.github.io/banned.txt')
-    .then(response => response.text())
-    .then(data => {
-        let bannedUsers = data.split('\n'); // assuming each user is on a new line
+async function checkBanned() {
+    try {
+        const response = await fetch('https://subkeys.github.io/banned.txt');
+        const data = await response.text();
+        
+        let bannedUsers = data.split('\n');
+        
         if (bannedUsers.includes(user)) {
             window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
         }
+    } catch (error) {
+        console.error('Error fetching or processing data:', error);
+    }
+}
+
+checkBanned();
     });
 
 
