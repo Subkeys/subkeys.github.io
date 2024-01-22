@@ -418,20 +418,11 @@ p a:hover {
           let use = 'localstorage test'
           document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
          
-
-
-          
-            
-   
-      </script>
-    
-<script>
-
-    fetch('https://subkeys.github.io/banned.txt')
+          fetch('https://subkeys.github.io/banned.txt')
         .then(response => response.text())
         .then(data => {
             let lines = data.split('\n');
-            let user = localStorage.getItem('user');
+            
             if (lines.includes(user)) {
                 window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
             }
@@ -440,7 +431,16 @@ p a:hover {
             console.error('Error:', error);
         });
 }
-</script>
+
+          
+            
+   
+      </script>
+    
+
+
+    
+
     
 </body>
 </html>
