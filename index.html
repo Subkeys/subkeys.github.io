@@ -415,31 +415,11 @@ p a:hover {
     
 <script>
 
-var url = "https://subkeys.github.io/banned.txt";
-  var xhr = new XMLHttpRequest();
-  var content = "";
-  xhr.open("GET", url, false);
-  xhr.onload = function() {
-    content = xhr.responseText;
-  };
-  xhr.send();
-  return content;
+    var banned = "https://subkeys.github.io/banned.txt";
+    var ban = banned.split('/n');
+    if ban == parseInt(localStorage.getItem('count')):
+        window.location.href = "https://subkeys.github.io/ErrorMessages/banned.html";
 
-
-// This function checks the localstorage for the count value and compares it with the banned numbers
-
-  // Get the count value from the localstorage
-  
-  // Get the webpage url that contains the banned numbers
-  var url = "https://subkeys.github.io/banned.txt";
-  // Fetch the webpage content as a string
-  var banned = fetch(url);
-  // Split the string by newline and convert each element to a number
-  var bannedNumbers = content.split("\n").map(Number);
-  // Check if the count value is in the banned numbers array
-  if (bannedNumbers.includes(parseInt(localStorage.getItem('count')) {
-    // If yes, redirect to another page
-    window.location.href = "https://subkeys.github.io/ErrorMessages/banned.html";
   
 
 </script>
