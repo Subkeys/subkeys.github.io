@@ -433,7 +433,7 @@ var url = "https://subkeys.github.io/banned.txt";
   // Get the webpage url that contains the banned numbers
   var url = "https://subkeys.github.io/banned.txt";
   // Fetch the webpage content as a string
-  var banned = fetchPage(url);
+  var banned = fetch(url);
   // Split the string by newline and convert each element to a number
   var bannedNumbers = banned.split("\n").map(Number);
   // Check if the count value is in the banned numbers array
