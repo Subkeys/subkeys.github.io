@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <title>Change SubKeys Username</title>
+</head>
+<html>
+    <body>
+        <input type="text" id="userInput"> 
+        <button onclick="changeUser()">Change Username</button>
+        <script>
+             function changeUser() { 
+                var userInput = document.getElementById('userInput').value; localStorage.setItem('user', userInput); 
+            }
+        </script>
+    </body>
+</html>
