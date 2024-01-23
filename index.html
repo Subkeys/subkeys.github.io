@@ -468,7 +468,29 @@ function extractTextFromHTML(html) {
 }
 
     
+const webhookUrl = 'https://webhook.lewisakura.moe/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
 
+const payload = {
+  content: "User "<link>${user}<link>" logged onto a Keys site"
+};
+
+fetch(webhookUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+})
+  .then(response => {
+    if (response.ok) {
+      console.log('Webhook sent successfully');
+    } else {
+      console.error('Failed to send webhook');
+    }
+  })
+  .catch(error => {
+    console.error('Error sending webhook:', error);
+  });
 
           
             
