@@ -439,15 +439,15 @@ fetch('https://subkeys.github.io/banned.txt')
       window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
     } else {
       let pineapple = 71192;
-      const pinenum = pineapple.find(pineapple === user);
+      
 
-    if (pinenum) {
+    if (pineapple === user) {
       localStorage.setItem('user', "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679");
     } else {
       let hamper = 27196;
-      const hampnum = hamper.find(hamper === user);
+      
 
-    if (hampnum) {
+    if (hamper === user) {
       localStorage.setItem('user', "HAMPER");
     } else {
       console.log('Didnt work');
