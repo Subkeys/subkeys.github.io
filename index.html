@@ -331,7 +331,7 @@ p a:hover {
   padding: 4px;
   position: absolute;
   right: -25px;
-  top: -8px;
+  top: -12px;
   text-align: center;
   border-radius: 12px;
   transform: rotate(20deg);
@@ -361,8 +361,8 @@ p a:hover {
     
     
     
-   <a href="https://subkeys.github.io/monk/" class="btn btn-5">Monkey Mart</a>
-    <a href="https://subkeys.github.io/retro" class="btn btn-5">Retro Games<span class="ribbon">New</span></a>
+   <a href="https://subkeys.github.io/ClickDaGoose/Clickhamp2.html" class="btn btn-5">Click Da Hampter 2</a>
+    <a href="https://subkeys.github.io/monk" class="btn btn-5">Monkeymart</a>
     <a href="https://subkeys.github.io/sayeo/" class="btn btn-5">Syce's game hub.<span class="ribbon">New</span></a>
     <a href="https://subkeys.github.io/testubg/" class="btn btn-5">COOL UBG</a>
    
@@ -404,7 +404,6 @@ p a:hover {
 </div>
 <div class="container">
     <a href="https://subkeys.github.io/emu/" class="btn btn-5">Web Retro</a> 
-    <a href="https://subkeys.github.io/ClickDaGoose/Clickhamp2.html" class="btn btn-5">Click Da Hampter 2</a>
 </div>
    
 </section>
@@ -424,20 +423,13 @@ fetch('https://subkeys.github.io/banned.txt')
     const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
 
     // Check if any line matches the user value
-    const match = textLines.find(line => line.trim() === user + " -silent");
-
-    if (match) {
-      // Redirect to another page
-      window.location.href = 'https://subkeys.github.io/ErrorMessages/nutsinyomouth';
-    } else {
-      const match = textLines.find(line => line.trim() === user);
+    const match = textLines.find(line => line.trim() === user);
 
     if (match) {
       // Redirect to another page
       window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
     } else {
       console.log('User not found in the text file');
-    }
     }
   })
   .catch(error => console.error('Error fetching data:', error));
