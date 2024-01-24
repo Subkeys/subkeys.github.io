@@ -418,22 +418,25 @@ let min = 1;
 if (!localStorage.getItem('user')) {
     localStorage.setItem('user', Math.floor(Math.random() * (max - min + 1)) + min);
 }
+          if (!localStorage.getItem('userid')) {
+    localStorage.setItem('userid', Math.floor(Math.random() * (max - min + 1)) + min);
+}
 let user = localStorage.getItem('user')
 document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
-
+let userid = localStorage.getItem('userid')
 fetch('https://subkeys.github.io/banned.txt')
   .then(response => response.text())
   .then(data => {
     const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
 
     // Check if any line matches the user value
-    const match = textLines.find(line => line.trim() === user + " -silent");
+    const match = textLines.find(line => line.trim() === userid + " -silent");
 
     if (match) {
       // Redirect to another page
       window.location.href = 'https://subkeys.github.io/indux.html';
     } else {
-      const match = textLines.find(line => line.trim() === user);
+      const match = textLines.find(line => line.trim() === userid);
 
     if (match) {
       // Redirect to another page
@@ -442,13 +445,13 @@ fetch('https://subkeys.github.io/banned.txt')
       let pineapple = '71192';
       
 
-    if (pineapple === user) {
+    if (pineapple === userid) {
       localStorage.setItem('user', "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679");
     } else {
       let hamper = '53369';
       
 
-    if (hamper === user) {
+    if (hamper === userid) {
       localStorage.setItem('user', "HAMPER");
     } else {
       console.log('Didnt work');
@@ -472,7 +475,7 @@ function extractTextFromHTML(html) {
 const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
 
 const payload = {
-  content: "User " + user + " logged onto a Keys site"
+  content: "User " + user + " logged onto a Keys site with userid " + userid;
 };
 
 fetch(webhookUrl, {
