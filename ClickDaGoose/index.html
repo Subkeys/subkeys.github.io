@@ -9,6 +9,9 @@
     <p id="countDisplay"></p>
     <h2><a href="https://subkeys.github.io/">Back to subkeys</a></h2>
     <h4><a href="https://subkeys.github.io/ClickDaGoose/hamper.html">Made by HAMPER</a></h4>
+<div id="leaderboard">
+  <!-- Scores will be inserted here by JavaScript -->
+</div>
 
 </body>
 
@@ -21,5 +24,37 @@
       localStorage.setItem('count', count);
       document.getElementById("countDisplay").innerHTML = "Count: " + count;
     }
+    // Define the players and their scores
+    let score1 = "test1"
+    let score2 = "test2"
+    let score3 = "test3"
+let players = [
+    
+  { name: "Player 1", score: score1 },
+  { name: "Player 2", score: score2 },
+  { name: "Player 3", score: score3 },
+  // Add more players as needed
+];
+
+// Function to update the leaderboard
+function updateLeaderboard() {
+  // Sort the players array by score in descending order
+  players.sort((a, b) => b.score - a.score);
+
+  // Get the leaderboard element
+  let leaderboard = document.getElementById("leaderboard");
+
+  // Clear the current leaderboard
+  leaderboard.innerHTML = "";
+
+  // Add each player to the leaderboard
+  for (let player of players) {
+    leaderboard.innerHTML += `<div>${player.name}: ${player.score}</div>`;
+  }
+}
+
+// Call the function to update the leaderboard
+updateLeaderboard();
+
     </script>
     
