@@ -55,12 +55,10 @@ function updateLeaderboard() {
   let leaderboard = document.getElementById("leaderboard");
 
   // Clear the current leaderboard
-  leaderboard.innerHTML = "";
+  document.getElementById("leaderboard").innerHTML = players[0].name + ":" + players[0].score;
 
   // Add each player to the leaderboard
-  for (let player of players) {
-    leaderboard.innerHTML += `<div>${player.name}: ${player.score}</div>`;
-  }
+  
 }
 
 // Call the function to update the leaderboard
