@@ -31,9 +31,9 @@ fetch('https://subkeys.github.io/scores.txt')
   .then(data => {
     const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
 
-    players = textLines.map(line => {
+    let players = textLines.map(line => {
       const [name, score] = line.split(':');
-      return { name: name.trim(), score: parseInt(score) };
+      return { name: name.trim(), score: parseFloat(score) };
     });
 
     // Sort players by score in descending order
