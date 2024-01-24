@@ -433,12 +433,58 @@ fetch('https://subkeys.github.io/banned.txt')
     const match = textLines.find(line => line.trim() === userid + " -silent");
 
     if (match) {
+        const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
+
+const payload = {
+  content: "User " + user + " got banned from a Keys site with userid " + userid
+};
+
+fetch(webhookUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+})
+  .then(response => {
+    if (response.ok) {
+      console.log('Webhook sent successfully');
+    } else {
+      console.error('Failed to send webhook');
+    }
+  })
+  .catch(error => {
+    console.error('Error sending webhook:', error);
+  });
       // Redirect to another page
       window.location.href = 'https://subkeys.github.io/indux.html';
     } else {
       const match = textLines.find(line => line.trim() === userid);
 
     if (match) {
+        const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
+
+const payload = {
+  content: "User " + user + " got banned from a Keys site with userid " + userid
+};
+
+fetch(webhookUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+})
+  .then(response => {
+    if (response.ok) {
+      console.log('Webhook sent successfully');
+    } else {
+      console.error('Failed to send webhook');
+    }
+  })
+  .catch(error => {
+    console.error('Error sending webhook:', error);
+  });
       // Redirect to another page
       window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
     } else {
@@ -454,7 +500,7 @@ fetch('https://subkeys.github.io/banned.txt')
     if (hamper === userid) {
       localStorage.setItem('user', "HAMPER");
     } else {
-      console.log('Didnt work');
+      console.log('Your not banned :)');
     }
     }
     }
