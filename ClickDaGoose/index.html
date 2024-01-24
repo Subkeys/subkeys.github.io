@@ -44,6 +44,12 @@ fetch('https://subkeys.github.io/scores.txt')
   })
   .catch(error => console.error('Error:', error));
 
+// Assuming players[0] is where the error occurs
+if (players[0]) {
+  console.log(`Highest score is ${players[0].score} by ${players[0].name}`);
+} else {
+  console.log('No players found');
+}
 
 
 // Function to update the leaderboard
