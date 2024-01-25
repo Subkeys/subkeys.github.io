@@ -24,51 +24,42 @@
       localStorage.setItem('count', count);
       document.getElementById("countDisplay").innerHTML = "Count: " + count;
     }
-let players = [];
+    let players = [];
 
-fetch('https://subkeys.github.io/scores.txt')
-  .then(response => response.text())
-  .then(data => {
-    const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
+    fetch('https://subkeys.github.io/scores.txt')
+      .then(response => response.text())
+      .then(data => {
+        const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
 
-    let players = textLines.map(line => {
-      const [name, score] = line.split(':');
-      return { name: name.trim(), score: parseFloat(score) };
-    });
+        players = textLines.map(line => {
+          const [name, score] = line.split(':');
+          return { name: name.trim(), score: parseFloat(score) };
+        });
 
-    // Sort players by score in descending order
-    players.sort((a, b) => b.score - a.score);
+        // Sort players by score in descending order
+        players.sort((a, b) => b.score - a.score);
 
-    // Now players[0] will have the highest score
-    console.log(`Highest score is ${players[0].score} by ${players[0].name}`);
-  })
-  .catch(error => console.error('Error:', error));
+        // Now players[0] will have the highest score
+        console.log(`Highest score is ${players[0].score} by ${players[0].name}`);
 
-// Assuming players[0] is where the error occurs
-if (players[0]) {
-  console.log(`Highest score is ${players[0].score} by ${players[0].name}`);
-} else {
-  console.log('No players found');
-}
+        // Call the function to update the leaderboard
+        updateLeaderboard();
+      })
+      .catch(error => console.error('Error:', error));
 
+    // Function to update the leaderboard
+    function updateLeaderboard() {
+      // Get the leaderboard element
+      let leaderboard = document.getElementById("leaderboard");
 
-// Function to update the leaderboard
-function updateLeaderboard() {
-  // Sort the players array by score in descending order
-  players.sort((a, b) => b.score - a.score);
+      // Clear the current leaderboard
+      leaderboard.innerHTML = '';
 
-  // Get the leaderboard element
-  let leaderboard = document.getElementById("leaderboard");
+      // Add each player to the leaderboard
+      players.forEach(player => {
+        leaderboard.innerHTML += player.name + ": " + player.score + "<br>";
+      });
+    }
+</script>
 
-  // Clear the current leaderboard
-  document.getElementById("leaderboard").innerHTML = players[1].name + ":" + players[1].score;
-
-  // Add each player to the leaderboard
-  
-}
-
-// Call the function to update the leaderboard
-updateLeaderboard();
-
-    </script>
     
