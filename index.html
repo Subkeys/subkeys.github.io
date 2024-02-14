@@ -343,7 +343,7 @@ p a:hover {
     
 <section class="buttons">
     <canvas height="220px"></canvas>
-    <h3 style="color:white;" id="userDisplay"></h3>
+    <h3 style="color:white;"><a id="userDisplay"></a></h3>
     <h1>SubKeys</h1>
     <a href="https://discord.gg/4Er5DaBPyh"><h5 style="color:white;">Join my discord to boss me around (Suggest stuff) - HAMPER</h5></a>
      <a href="https://docs.google.com/forms/d/e/1FAIpQLScYwEEdjL9_ZZO9IGV57Af1IVKmU_xPpmgJGwpLvrIO3q7ksg/viewform?usp=sf_link"><h5 style="color:white;">Suggest Games</h5></a>
@@ -436,7 +436,9 @@ if (!localStorage.getItem('user')) {
 }
 let user = localStorage.getItem('user')
 document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
+          
 let userid = localStorage.getItem('userid')
+          
 document.getElementById("useridDisplay").innerHTML = "UserId: " + userid;
 fetch('https://subkeys.github.io/banned.txt')
   .then(response => response.text())
@@ -515,6 +517,23 @@ fetch(webhookUrl, {
       localStorage.setItem('user', "HAMPER");
     } else {
       console.log('Your not banned :)');
+        fetch('https://subkeys.github.io/banned.txt')
+  .then(response => response.text())
+  .then(data => {
+    const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
+
+    // Check if any line matches the user value
+    const match = textLines.find(line => line.trim() === userid + " -dev");
+        if (match) {
+            // Get the element by its id
+var element = document.getElementById("userDisplay");
+
+// Set the color of the element to red
+element.style.color = "green";
+
+      
+    } else {
+      
     }
     }
     }
