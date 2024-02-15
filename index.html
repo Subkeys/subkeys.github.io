@@ -30,7 +30,15 @@
     background-color: yellow;
     text-align: center;
 }
-
+#membad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 0px;
+    background-color: yellow;
+    text-align: center;
+}
 html,
 body {
   box-sizing: border-box;
@@ -41,7 +49,7 @@ body {
 body {
     border: 10px solid white;
   background: #000000;
-  background-image: url("https://images.wallpapersden.com/image/download/satoru-gojo-acid-blue-eyes-jujutsu-kaisen_bmZpbWqUmZqaraWkpJRnZm1prWZmbW0.jpg");
+  
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
@@ -356,6 +364,9 @@ p a:hover {
     <div id="badge">
     <img src="https://subkeys.github.io/WOW-removebg-preview.png" alt="Dev Badge" height="30px" width="30px">
     </div>
+    <div id="membad">
+    <img src="https://subkeys.github.io/OIG1.iyC-removebg-preview.png" alt="Member Badge" height="30px" width="30px">
+    </div>
     <h3 style="color:white;" id="userDisplay"></h3>
     <h1>SubKeys</h1>
     <a href="https://discord.gg/4Er5DaBPyh"><h5 style="color:white;">Join my discord to boss me around (Suggest stuff) - HAMPER</h5></a>
@@ -439,9 +450,10 @@ p a:hover {
 </section>
       <script>
           var showBadge = true;
-
+var showMembad = true;
 // Get the element where your badge is
 var badge = document.getElementById("badge");
+          var membad = document.getElementById("membad");
          let max = 99999;
 let min = 1;
 if (!localStorage.getItem('user')) {
@@ -551,6 +563,25 @@ element.style.color = "green";
        badge.style.display = "block"; // Show the badge
 } else {
     badge.style.display = "none"; // Hide the badge
+                    fetch('https://subkeys.github.io/banned.txt')
+  .then(response => response.text())
+  .then(data => {
+    const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
+
+    // Check if any line matches the user value
+    const match = textLines.find(line => line.trim() === userid + " -mem");
+        if (match) {
+            // Get the element by its id
+var element = document.getElementById("userDisplay");
+
+// Set the color of the element to red
+element.style.color = "yellow";
+
+      var member = true;
+       membad.style.display = "block"; // Show the badge
+} else {
+    membad.style.display = "none"; // Hide the badge
+}
 }
     
         
