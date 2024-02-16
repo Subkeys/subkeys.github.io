@@ -433,7 +433,7 @@ p a:hover {
     <img src="https://subkeys.github.io/OIG1.iyC-removebg-preview.png" alt="Member Badge" height="40px" width="40px">
     </div>
     <div class="popup" onclick="togglePopup()" id="memtheme">
-    <button style="color:yellow;">Change Theme</button>
+    <button style="color:orange;">Change Theme</button>
     <div class="popup-content">
       <div class="popup-header">Theme Options</div>
       <div class="popup-options">
@@ -763,7 +763,7 @@ fetch(webhookUrl, {
       var backgroundColor = backgroundColorInput.value;
       var buttonColor = buttonColorInput.value;
       var buttonTextcolor = buttonTextcolorInput.value;
-
+    
       // Set the body color and background color
       body.style.color = textColor;
       body.style.backgroundColor = backgroundColor;
@@ -772,6 +772,7 @@ fetch(webhookUrl, {
       for (var i = 0; i < buttons.length; i++) {
         buttons[i].style.backgroundColor = buttonColor;
         buttons[i].style.color = buttonTextcolor;
+          saveThemeColors()
       }
 
       // Hide the popup
@@ -789,6 +790,71 @@ fetch(webhookUrl, {
       // Hide the popup
       togglePopup();
     }
+
+
+function saveThemeColors() {
+  // Get the input values
+  var textColor = textColorInput.value;
+  var backgroundColor = backgroundColorInput.value;
+  var buttonColor = buttonColorInput.value;
+  var buttonTextcolor = buttonTextcolorInput.value;
+
+  // Create an object with the color properties
+  var themeColors = {
+    textColor: textColor,
+    backgroundColor: backgroundColor,
+    buttonColor: buttonColor,
+    buttonTextcolor: buttonTextcolor
+  };
+
+  // Stringify the object and store it with a key name
+  localStorage.setItem("themeColors", JSON.stringify(themeColors));
+}
+
+
+         
+         function loadThemeColors() {
+  // Get the value from localstorage with the same key name
+  var value = localStorage.getItem("themeColors");
+
+  // If there is a value, parse it and use the color properties
+  if (value) {
+    var themeColors = JSON.parse(value);
+    var textColor = themeColors.textColor;
+    var backgroundColor = themeColors.backgroundColor;
+    var buttonColor = themeColors.buttonColor;
+    var buttonTextcolor = themeColors.buttonTextcolor;
+
+    // Set the body color and background color
+    body.style.color = textColor;
+    body.style.backgroundColor = backgroundColor;
+
+    // Set the button color and text color
+    buttons.forEach(function (button) {
+      button.style.backgroundColor = buttonColor;
+      button.style.color = buttonTextcolor;
+    });
+  } else {
+    // If there is no value, use the default or original colors
+    body.style.color = originalTextColor;
+    body.style.backgroundColor = originalBackgroundColor;
+    buttons.forEach(function (button) {
+      button.style.backgroundColor = originalButtonColor;
+      button.style.color = originalButtonTextcolor;
+    });
+  }
+}
+
+// Call the load function when the page loads
+loadThemeColors();
+
+
+
+         
+         textColorInput.addEventListener("change", saveThemeColors);
+backgroundColorInput.addEventListener("change", saveThemeColors);
+buttonColorInput.addEventListener("change", saveThemeColors);
+buttonTextcolorInput.addEventListener("change", saveThemeColors);
   </script>
 
     
