@@ -540,6 +540,7 @@ p a:hover {
 
     
       <script>
+          var memtheme = document.getElementById("memtheme");
           var showBadge = true;
 var showMembad = true;
 // Get the element where your badge is
@@ -669,9 +670,11 @@ var element = document.getElementById("userDisplay");
 element.style.color = "yellow";
 
       var member = true;
+            memtheme.style.display = "block";
        membad.style.display = "block"; // Show the badge
 } else {
     membad.style.display = "none"; // Hide the badge
+              memtheme.style.display = "none";
 }
 });
  
