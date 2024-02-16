@@ -21,6 +21,69 @@
   transition-duration: 0.6s;
   transition-timing-function: ease;
 }
+    /* The popup container */
+    .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    /* The popup content */
+    .popup-content {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid black;
+    }
+
+    /* The popup header */
+    .popup-header {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* The popup options */
+    .popup-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    /* The popup labels */
+    .popup-label {
+      margin: 5px;
+    }
+
+    /* The popup inputs */
+    .popup-input {
+      width: 100px;
+    }
+
+    /* The popup buttons */
+    .popup-button {
+      margin: 10px;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* The popup button colors */
+    .popup-button-apply {
+      background-color: green;
+    }
+
+    .popup-button-cancel {
+      background-color: red;
+    }
+
+    /* Show the popup when the container is clicked */
+    .popup.show .popup-content {
+      display: block;
+    }
 #badge {
     position: fixed;
     top: 0;
@@ -367,13 +430,34 @@ p a:hover {
     <img src="https://subkeys.github.io/WOW-removebg-preview.png" alt="Dev Badge" height="30px" width="30px">
     </div>
     <div id="membad" style="right: 10px;">
-    <img src="https://subkeys.github.io/OIG1.iyC-removebg-preview.png" alt="Member Badge" height="38px" width="38px">
+    <img src="https://subkeys.github.io/OIG1.iyC-removebg-preview.png" alt="Member Badge" height="40px" width="40px">
     </div>
+    <div class="popup" onclick="togglePopup()" id="memtheme">
+    <button>Change Theme</button>
+    <div class="popup-content">
+      <div class="popup-header">Theme Options</div>
+      <div class="popup-options">
+        <div class="popup-label">Text Color:</div>
+        <input class="popup-input" type="color" id="text-color" value="#000000">
+        <div class="popup-label">Background Color:</div>
+        <input class="popup-input" type="color" id="background-color" value="#ffffff">
+        <div class="popup-label">Button Color:</div>
+        <input class="popup-input" type="color" id="button-color" value="#f0f0f0">
+        <div class="popup-label">Button Text Color:</div>
+        <input class="popup-input" type="color" id="button-text-color" value="#000000">
+      </div>
+      <div class="popup-buttons">
+        <button class="popup-button popup-button-apply" onclick="applyTheme()">Apply</button>
+        <button class="popup-button popup-button-cancel" onclick="cancelTheme()">Cancel</button>
+      </div>
+    </div>
+  </div>
+         
     <h3 style="color:white;" id="userDisplay"></h3>
     <h1>SubKeys</h1>
     <a href="https://discord.gg/4Er5DaBPyh"><h5 style="color:white;">Join my discord to boss me around (Suggest stuff) - HAMPER</h5></a>
      <a href="https://docs.google.com/forms/d/e/1FAIpQLScYwEEdjL9_ZZO9IGV57Af1IVKmU_xPpmgJGwpLvrIO3q7ksg/viewform?usp=sf_link"><h5 style="color:white;">Suggest Games</h5></a>
-    <h5 style="color:yellow">Members exist now... Pay us like $5 for stuff we dont know yet... Once we have a reason to buy this we'll promote this more. - HAMPER</h5>
+    <h5 style="color:yellow">If SubKeys breaks im working on it... - HAMPER</h5>
     <div class="container">
     <a href="https://subkeys.github.io/bitlife" class="btn btn-5"><img src="/image/bit.png" alt="Game Logo" class="image" width="130" height="130"></a>
     <a href="https://subkeys.github.io/Ducksoup/" class="btn btn-5"><img src="/image/ducksoup.gif" alt="Game Logo" class="image" width="140" height="130"></a>
@@ -639,7 +723,70 @@ fetch(webhookUrl, {
     
     </script>  
 
-    
+     <script>
+    // Get the popup container element
+    var popup = document.querySelector(".popup");
+
+    // Get the popup content element
+    var popupContent = document.querySelector(".popup-content");
+
+    // Get the popup input elements
+    var textColorInput = document.getElementById("text-color");
+    var backgroundColorInput = document.getElementById("background-color");
+    var buttonColorInput = document.getElementById("button-color");
+    var buttonTextcolorInput = document.getElementById("button-text-color");
+
+    // Get the body element
+    var body = document.body;
+
+    // Get the button elements
+    var buttons = document.querySelectorAll("button");
+
+    // Store the original theme colors
+    var originalTextColor = body.style.color;
+    var originalBackgroundColor = body.style.backgroundColor;
+    var originalButtonColor = buttons[0].style.backgroundColor;
+    var originalButtonTextcolor = buttons[0].style.color;
+
+    // A function to toggle the popup visibility
+    function togglePopup() {
+      popup.classList.toggle("show");
+    }
+
+    // A function to apply the theme changes
+    function applyTheme() {
+      // Get the input values
+      var textColor = textColorInput.value;
+      var backgroundColor = backgroundColorInput.value;
+      var buttonColor = buttonColorInput.value;
+      var buttonTextcolor = buttonTextcolorInput.value;
+
+      // Set the body color and background color
+      body.style.color = textColor;
+      body.style.backgroundColor = backgroundColor;
+
+      // Set the button color and text color
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.backgroundColor = buttonColor;
+        buttons[i].style.color = buttonTextcolor;
+      }
+
+      // Hide the popup
+      togglePopup();
+    }
+
+    // A function to cancel the theme changes
+    function cancelTheme() {
+      // Reset the input values
+      textColorInput.value = originalTextColor;
+      backgroundColorInput.value = originalBackgroundColor;
+      buttonColorInput.value = originalButtonColor;
+      buttonTextcolorInput.value = originalButtonTextcolor;
+
+      // Hide the popup
+      togglePopup();
+    }
+  </script>
 
     
 </body>
