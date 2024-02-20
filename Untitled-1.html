@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<title>You got a thing</title>
+<script>
+    let user = localStorage.getItem('user')
+    let userid = localStorage.getItem('userid')
+const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1209628947470360637/EEWIDw6fRCgJTh4NkGYJww_4IS8lyOUqrVLk4s0FvS8HKSPb6heVe56D-anPdq6olS5j';
+
+const payload = {
+  content: "User " + user + " got SubKeys Nitro " + userid
+};
+
+fetch(webhookUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+})
+  .then(response => {
+    if (response.ok) {
+      console.log('Webhook sent successfully');
+    } else {
+      console.error('Failed to send webhook');
+    }
+}
+  )
+</script>
