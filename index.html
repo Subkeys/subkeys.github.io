@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Porn</title>
+  <title>Schoology | Sign In</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'><link rel="stylesheet" href="./style.css">
@@ -27,7 +27,6 @@
       display: inline-block;
       cursor: pointer;
     }
-
     /* The popup content */
     .popup-content {
       display: none;
@@ -37,30 +36,25 @@
       background-color: white;
       border: 1px solid black;
     }
-
     /* The popup header */
     .popup-header {
       font-weight: bold;
       text-align: center;
     }
-
     /* The popup options */
     .popup-options {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-
     /* The popup labels */
     .popup-label {
       margin: 5px;
     }
-
     /* The popup inputs */
     .popup-input {
       width: 100px;
     }
-
     /* The popup buttons */
     .popup-button {
       margin: 10px;
@@ -70,13 +64,13 @@
       color: white;
       cursor: pointer;
     }
-
-   
-
+    /* The popup button colors */
+    .popup-button-apply {
+      background-color: green;
+    }
     .popup-button-cancel {
       background-color: red;
     }
-
     /* Show the popup when the container is clicked */
     .popup.show .popup-content {
       display: block;
@@ -107,7 +101,6 @@ body {
   height: 100%;
   width: 100%;
 }
-
 body {
     border: 10px solid white;
   background: #000000;
@@ -115,7 +108,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
-
 .buttons {
   display: flex;
   flex-direction: column;
@@ -124,7 +116,6 @@ body {
   text-align: center;
   width: 100%;
 }
-
 .container {
   align-items: center;
   display: flex;
@@ -139,7 +130,6 @@ body {
     justify-content: space-between;
   }
 }
-
 h1 {
   color: #fff;
   font-size: 1.25em;
@@ -162,7 +152,6 @@ h1 {
     margin: 0 0 1em;
   }
 }
-
 h2 {
   color: #fff;
   font-size: 1.25em;
@@ -185,7 +174,6 @@ h2 {
     margin: 0 0 1em;
   }
 }
-
 h3 {
   color: #fcfcfcd3;
   font-size: 0.75em;
@@ -208,7 +196,6 @@ h3 {
     margin: 0 0 1em;
   }
 }
-
 p {
   color: #fff;
   font-size: 12px;
@@ -241,7 +228,6 @@ p a:hover {
   background: white;
   color: #E1332D;
 }
-
 .btn {
   color: #fff;
   cursor: pointer;
@@ -263,7 +249,6 @@ p a:hover {
 .btn:hover {
   text-decoration: none;
 }
-
 .btn-1 {
   background: #e02c26;
   font-weight: 100;
@@ -282,7 +267,6 @@ p a:hover {
   stroke-dasharray: 422, 0;
   transition: all 0.35s linear;
 }
-
 .btn-1:hover {
   background: rgba(225, 51, 45, 0);
   font-weight: 900;
@@ -294,16 +278,13 @@ p a:hover {
   stroke-dashoffset: 48;
   transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 }
-
 .btn-2 {
   letter-spacing: 0;
 }
-
 .btn-2:hover,
 .btn-2:active {
   letter-spacing: 5px;
 }
-
 .btn-2:after,
 .btn-2:before {
   -webkit-backface-visibility: hidden;
@@ -317,7 +298,6 @@ p a:hover {
   transition: all 280ms ease-in-out;
   width: 0;
 }
-
 .btn-2:hover:after,
 .btn-2:hover:before {
   -webkit-backface-visibility: hidden;
@@ -326,13 +306,11 @@ p a:hover {
   transition: width 350ms ease-in-out;
   width: 70%;
 }
-
 .btn-2:hover:before {
   bottom: auto;
   top: 0;
   width: 70%;
 }
-
 .btn-3 {
   background: #e3403a;
   border: 1px solid #da251f;
@@ -341,7 +319,6 @@ p a:hover {
   letter-spacing: 1px;
   transition: all 150ms linear;
 }
-
 .btn-3:hover {
   background: #e02c26;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -351,7 +328,6 @@ p a:hover {
   text-shadow: -1px -1px 0 #c2211c;
   transition: all 250ms linear;
 }
-
 .btn-4 {
   border: 1px solid;
   overflow: hidden;
@@ -373,12 +349,10 @@ p a:hover {
   width: 50px;
   z-index: -10;
 }
-
 .btn-4:hover:after {
   left: 120%;
   transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
 }
-
 .btn-5 {
   border: 0 solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
@@ -388,7 +362,6 @@ p a:hover {
   text-shadow: none;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
 }
-
 .btn-5:hover {
   border: 1px solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
@@ -400,11 +373,9 @@ p a:hover {
   color: white;
   background: black;
 }
-
 .highlight {
   background-color: white;
 }
-
 .ribbon {
   width: 60px;
   font-size: 14px;
@@ -451,8 +422,8 @@ p a:hover {
   </div>
          
     <h3 style="color:white;" id="userDisplay"></h3>
-    <h1>Porn Hub</h1>
-    
+    <h1>SubKeys</h1>
+    <a href="https://discord.gg/4Er5DaBPyh"><h5 style="color:white;">Join my discord to boss me around (Suggest stuff) - HAMPER</h5></a>
      <a href="https://forms.gle/ga5XqEvxz7iztiVQA"><h5 style="color:white;">Click right here to give us ideas to add to the site :}</h5></a>
     <h5 style="color:yellow">Fixed UBG Online (thank you for letting me know)</h5>
     <div class="container">
@@ -462,50 +433,48 @@ p a:hover {
     <a href="https://subkeys.github.io/test/play/burritobison/" class="btn btn-5"><img src="https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-618487-52.jpg" alt="Game Logo" class="image" width="130" height="130"></a> 
     <a href="https://subkeys.github.io/Skele" class="btn btn-5"><img src="/image/undertale.webp" alt="Game Logo" class="image" width="140" height="130"></a>
     <a href="https://subkeys.github.io/testubg/games/getaway-shootout.html" class="btn btn-5"><img src="https://lh3.googleusercontent.com/3bb-9JFWr4nUs39M6SwWadhNRNak3oIs_hoSxfoT3v_JSFns7HRJIm8xBmmqWP1fOz5y83fO2U5jSOefuGBCv6g9=w128-h128-e365-rj-sc0x00ffffff" alt="Game Logo" class="image" width="130" height="130"> </a>
-
     </div>
-
     <canvas height="50px"></canvas>
   <div class="container">
     
-    <a href="https://www.buymeacoffee.com/subkeys/extras" class="btn btn-5" style="color:green;" id="subn">Mega Porn</a>
+    <a href="https://www.buymeacoffee.com/subkeys/extras" class="btn btn-5" style="color:green;" id="subn">SubKeys Nitro</a>
     
-   <a href="https://subkeys.github.io/monk/" class="btn btn-5">Porn</a>
+   <a href="https://subkeys.github.io/monk/" class="btn btn-5">Monkey Mart</a>
     
-    <a href="https://subkeys.github.io/sayeo/" class="btn btn-5">More porn</a>
-    <a href="https://subkeys.github.io/aws/" class="btn btn-5">Porn</a>
+    <a href="https://subkeys.github.io/sayeo/" class="btn btn-5">Syce's game hub</a>
+    <a href="https://subkeys.github.io/aws/" class="btn btn-5">FreeNova Games</a>
    
    
  
-    <a href="https://subkeys.github.io/mathstuff/" class="btn btn-5">"xxx porn<span class="ribbon">New</span></a>
+    <a href="https://subkeys.github.io/mathstuff/" class="btn btn-5">"Math" Games 66<span class="ribbon">New</span></a>
     <!--End of Button 5 -->
     
     
   </div>
 <div class="container">
-    <a href="https://subkeys.github.io/Discord" class="btn btn-5">Porn</a> 
-    <a href="https://subkeys.github.io/Credits/" class="btn btn-5">oily porn</a>
-    <a href="https://subkeys.github.io/Ducksoup/" class="btn btn-5">Porn</a>
-    <a href="https://subkeys.github.io/Skele/" class="btn btn-5">Porn</a>
-    <a href="https://subkeys.github.io/test" class="btn btn-5">Porn</a>
-    <a href="https://subkeys.github.io/iframe/WheresBill" class="btn btn-5">whers porn</a>
-    <a href="https://subkeys.github.io/iframe/DanceOfFireAndIce" class="btn btn-5">Dance of porn</a>
+    <a href="https://subkeys.github.io/Discord" class="btn btn-5">Discord</a> 
+    <a href="https://subkeys.github.io/Credits/" class="btn btn-5">Credits</a>
+    <a href="https://subkeys.github.io/Ducksoup/" class="btn btn-5">Ducksoup</a>
+    <a href="https://subkeys.github.io/Skele/" class="btn btn-5">Undertale Rejuv</a>
+    <a href="https://subkeys.github.io/test" class="btn btn-5">Native Old</a>
+    <a href="https://subkeys.github.io/iframe/WheresBill" class="btn btn-5">Where's Bill?</a>
+    <a href="https://subkeys.github.io/iframe/DanceOfFireAndIce" class="btn btn-5">Dance of 🔥 & 🧊</a>
     
 </div>
 <div class="container">
     
     
-    <a href="https://subkeys.github.io/Minecraft" class="btn btn-5">Poop porn</a>
-    <a href="https://subkeys.github.io/badtime/" class="btn btn-5">2d porn<span class="ribbon">New</span></a>
-<a href="https://pages.cs.wisc.edu/~harron/" class="btn btn-5">porn<span class="ribbon">New</span></a>
-    <a href="https://my-store-f0c04b.creator-spring.com/" class="btn btn-5">Hampter Porn</a>
-    <a href="https://subkeys.github.io/ruffle" class="btn btn-5">Porn</a>
+    <a href="https://subkeys.github.io/Minecraft" class="btn btn-5">Minecraft</a>
+    <a href="https://subkeys.github.io/badtime/" class="btn btn-5">Sans Fight<span class="ribbon">New</span></a>
+<a href="https://pages.cs.wisc.edu/~harron/" class="btn btn-5">Pacer Test<span class="ribbon">New</span></a>
+    <a href="https://my-store-f0c04b.creator-spring.com/" class="btn btn-5">Hampter Store</a>
+    <a href="https://subkeys.github.io/ruffle" class="btn btn-5">Ruffle</a>
     
 </div>
 <div class="container">
-     <a href="https://subkeys.github.io/Exclusives" class="btn btn-5">Porn<span class="ribbon">New</span></a>
+     <a href="https://subkeys.github.io/Exclusives" class="btn btn-5">SubKeys Exclusives<span class="ribbon">New</span></a>
   
-    <a href="https://subkeys.github.io/retro" class="btn btn-5">Porn</a>
+    <a href="https://subkeys.github.io/retro" class="btn btn-5">Bad Retro Games</a>
     <a href="https://subkeys.github.io/hamps" class="btn btn-5">Real Discord</a>
     <a href="https://subkeys.github.io/testubg" class="btn btn-5">Cool UBG</a>
     <a href="https://subkeys.github.io/fna/Winstons" class="btn btn-5">FNAW</a>
@@ -532,11 +501,8 @@ p a:hover {
 </div>
 </section>
     
-
-
-
     
-       <script>
+      <script>
           var subnitro = document.getElementById("subn");
           var memtheme = document.getElementById("memtheme");
           var showBadge = true;
@@ -553,26 +519,21 @@ if (!localStorage.getItem('user')) {
     localStorage.setItem('userid', Math.floor(Math.random() * (max - min + 1)) + min);
 }
 let user = localStorage.getItem('user')
-document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
-          
+
+
 let userid = localStorage.getItem('userid')
-          
-document.getElementById("useridDisplay").innerHTML = "UserId: " + userid;
+
 fetch('https://subkeys.github.io/banned.txt')
   .then(response => response.text())
   .then(data => {
     const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
-
     // Check if any line matches the user value
     const match = textLines.find(line => line.trim() === userid + " -silent");
-
     if (match) {
         const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
-
 const payload = {
   content: "User " + user + " got banned from a Keys site with userid " + userid
 };
-
 fetch(webhookUrl, {
   method: 'POST',
   headers: {
@@ -594,14 +555,11 @@ fetch(webhookUrl, {
       window.location.href = 'https://subkeys.github.io/indux.html';
     } else {
       const match = textLines.find(line => line.trim() === userid);
-
     if (match) {
         const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
-
 const payload = {
   content: "User " + user + " got banned from a Keys site with userid " + userid
 };
-
 fetch(webhookUrl, {
   method: 'POST',
   headers: {
@@ -624,13 +582,11 @@ fetch(webhookUrl, {
     } else {
       let pineapple = '71192';
       
-
     if (pineapple === userid) {
       localStorage.setItem('user', "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679");
     } else {
       let hamper = '53369';
       
-
     if (hamper === userid) {
       localStorage.setItem('user', "HAMPER");
     } else {
@@ -639,16 +595,13 @@ fetch(webhookUrl, {
   .then(response => response.text())
   .then(data => {
     const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
-
     // Check if any line matches the user value
     const match = textLines.find(line => line.trim() === userid + " -dev");
         if (match) {
             // Get the element by its id
 var element = document.getElementById("userDisplay");
-
 // Set the color of the element to red
 element.style.color = "green";
-
       
        badge.style.display = "none"; // Show the badge
 } else {
@@ -657,16 +610,13 @@ element.style.color = "green";
   .then(response => response.text())
   .then(data => {
     const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
-
     // Check if any line matches the user value
     const match = textLines.find(line => line.trim() === userid + " -mem");
         if (match) {
             // Get the element by its id
 var element = document.getElementById("userDisplay");
-
 // Set the color of the element to red
 element.style.color = "yellow";
-
       var member = true;
             memtheme.style.display = "block";
             subnitro.style.display = "none";
@@ -679,7 +629,6 @@ element.style.color = "yellow";
  
         
         
-
           
 function extractTextFromHTML(html) {
   // Use DOM manipulation or regular expressions to extract text from HTML
@@ -689,14 +638,11 @@ function extractTextFromHTML(html) {
   const paragraphs = doc.querySelectorAll('p');
   return Array.from(paragraphs).map(p => p.textContent).join('\n');
 }
-
     
 const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
-
 const payload = {
   content: "User " + user + " logged onto a Keys site with userid " + userid
 };
-
 fetch(webhookUrl, {
   method: 'POST',
   headers: {
@@ -724,37 +670,29 @@ fetch(webhookUrl, {
         
     
     </script>  
-
      <script>
     // Get the popup container element
     var popup = document.querySelector(".popup");
-
     // Get the popup content element
     var popupContent = document.querySelector(".popup-content");
-
     // Get the popup input elements
     var textColorInput = document.getElementById("text-color");
     var backgroundColorInput = document.getElementById("background-color");
     var buttonColorInput = document.getElementById("button-color");
     var buttonTextcolorInput = document.getElementById("button-text-color");
-
     // Get the body element
     var body = document.body;
-
     // Get the button elements
     var buttons = document.querySelectorAll("button");
-
     // Store the original theme colors
     var originalTextColor = body.style.color;
     var originalBackgroundColor = body.style.backgroundColor;
     var originalButtonColor = buttons[0].style.backgroundColor;
     var originalButtonTextcolor = buttons[0].style.color;
-
     // A function to toggle the popup visibility
     function togglePopup() {
       popup.classList.toggle("show");
     }
-
     // A function to apply the theme changes
     function applyTheme() {
       // Get the input values
@@ -766,18 +704,15 @@ fetch(webhookUrl, {
       // Set the body color and background color
       body.style.color = textColor;
       body.style.backgroundColor = backgroundColor;
-
       // Set the button color and text color
       for (var i = 0; i < buttons.length; i++) {
         buttons[i].style.backgroundColor = buttonColor;
         buttons[i].style.color = buttonTextcolor;
           saveThemeColors()
       }
-
       // Hide the popup
       togglePopup();
     }
-
     // A function to cancel the theme changes
     function cancelTheme() {
       // Reset the input values
@@ -785,19 +720,15 @@ fetch(webhookUrl, {
       backgroundColorInput.value = originalBackgroundColor;
       buttonColorInput.value = originalButtonColor;
       buttonTextcolorInput.value = originalButtonTextcolor;
-
       // Hide the popup
       togglePopup();
     }
-
-
 function saveThemeColors() {
   // Get the input values
   var textColor = textColorInput.value;
   var backgroundColor = backgroundColorInput.value;
   var buttonColor = buttonColorInput.value;
   var buttonTextcolor = buttonTextcolorInput.value;
-
   // Create an object with the color properties
   var themeColors = {
     textColor: textColor,
@@ -805,17 +736,13 @@ function saveThemeColors() {
     buttonColor: buttonColor,
     buttonTextcolor: buttonTextcolor
   };
-
   // Stringify the object and store it with a key name
   localStorage.setItem("themeColors", JSON.stringify(themeColors));
 }
-
-
          
          function loadThemeColors() {
   // Get the value from localstorage with the same key name
   var value = localStorage.getItem("themeColors");
-
   // If there is a value, parse it and use the color properties
   if (value) {
     var themeColors = JSON.parse(value);
@@ -823,11 +750,9 @@ function saveThemeColors() {
     var backgroundColor = themeColors.backgroundColor;
     var buttonColor = themeColors.buttonColor;
     var buttonTextcolor = themeColors.buttonTextcolor;
-
     // Set the body color and background color
     body.style.color = textColor;
     body.style.backgroundColor = backgroundColor;
-
     // Set the button color and text color
     buttons.forEach(function (button) {
       button.style.backgroundColor = buttonColor;
@@ -843,19 +768,14 @@ function saveThemeColors() {
     });
   }
 }
-
 // Call the load function when the page loads
 loadThemeColors();
-
-
-
          
          textColorInput.addEventListener("change", saveThemeColors);
 backgroundColorInput.addEventListener("change", saveThemeColors);
 buttonColorInput.addEventListener("change", saveThemeColors);
 buttonTextcolorInput.addEventListener("change", saveThemeColors);
   </script>
-
     
 </body>
 </html>
