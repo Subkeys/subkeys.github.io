@@ -393,7 +393,7 @@ p a:hover {
 </style>
     
 <section class="buttons">
-    <canvas height="220px"></canvas>
+    <canvas height="245px"></canvas>
     <div id="badge">
     <img src="https://subkeys.github.io/WOW-removebg-preview.png" alt="Dev Badge" height="30px" width="30px">
     </div>
@@ -465,14 +465,14 @@ p a:hover {
     
     
     <a href="https://subkeys.github.io/Minecraft" class="btn btn-5">Minecraft</a>
-    <a href="https://subkeys.github.io/badtime/" class="btn btn-5">Sans Fight<span class="ribbon">New</span></a>
-<a href="https://pages.cs.wisc.edu/~harron/" class="btn btn-5">Pacer Test<span class="ribbon">New</span></a>
+    <a href="https://subkeys.github.io/badtime/" class="btn btn-5">Sans Fight</a>
+<a href="https://pages.cs.wisc.edu/~harron/" class="btn btn-5">Pacer Test</a>
     <a href="https://my-store-f0c04b.creator-spring.com/" class="btn btn-5">Hampter Store</a>
     <a href="https://subkeys.github.io/ruffle" class="btn btn-5">Ruffle</a>
     
 </div>
 <div class="container">
-     <a href="https://subkeys.github.io/Exclusives" class="btn btn-5">SubKeys Exclusives<span class="ribbon">New</span></a>
+     <a href="https://subkeys.github.io/Exclusives" class="btn btn-5">SubKeys Exclusives</a>
   
     <a href="https://subkeys.github.io/retro" class="btn btn-5">Bad Retro Games</a>
     <a href="https://subkeys.github.io/hamps" class="btn btn-5">Real Discord</a>
@@ -484,7 +484,7 @@ p a:hover {
 <div class="container">
     <a href="https://subkeys.github.io/emu/" class="btn btn-5">Web Retro</a> 
     
-    <a href="https://subkeys.github.io/hahacool" class="btn btn-5">FNF Mods<span class="ribbon">New</span></a>
+    <a href="https://subkeys.github.io/hahacool" class="btn btn-5">FNF Mods</a>
     <a href="https://subkeys.github.io/changeuser.html" class="btn btn-5">Username</a>
     <a href="https://getbetterkeys.github.io" class="btn btn-5">OutRed</a>
     <!--Please do not get cum on the of the Change Username button if you want to resist please i beg you if you think the button is a security risk i can explain in a call what this system does !-->
@@ -492,6 +492,9 @@ p a:hover {
     <!--me too-->
      <a href="https://subkeys.github.io/named/" class="btn btn-5">UBG Online</a>
 </div>
+    <div class="container">
+<a style="color:orange;" id="nitrogame" href="https://subkeys.github.io/ucn/" class="btn btn-5">Macvg<span class="ribbon">New</span></a>
+    </div>
 <div class="container">
     <a href="https://subkeys.github.io/ucn/" class="btn btn-5">UCN </a>
     <a href="https://subkeys.github.io/tictetr/" class="btn btn-5">Tetris</a>
@@ -505,6 +508,7 @@ p a:hover {
       <script>
           var subnitro = document.getElementById("subn");
           var memtheme = document.getElementById("memtheme");
+          var nitrogame = document.getElementById("nitrogame");
           var showBadge = true;
 var showMembad = true;
 // Get the element where your badge is
@@ -621,9 +625,11 @@ element.style.color = "yellow";
             memtheme.style.display = "block";
             subnitro.style.display = "none";
        membad.style.display = "block"; // Show the badge
+             
 } else {
     membad.style.display = "none"; // Hide the badge
               memtheme.style.display = "none";
+            nitrogame.style.display = "none";
 }
 });
  
