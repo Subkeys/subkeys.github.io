@@ -556,11 +556,11 @@ if (!localStorage.getItem('user')) {
     localStorage.setItem('userid', Math.floor(Math.random() * (max - min + 1)) + min);
 }
 let user = localStorage.getItem('user')
-document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
+
           
 let userid = localStorage.getItem('userid')
           
-document.getElementById("useridDisplay").innerHTML = "UserId: " + userid;
+
 fetch('https://subkeys.github.io/banned.txt')
   .then(response => response.text())
   .then(data => {
