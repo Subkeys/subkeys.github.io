@@ -526,7 +526,8 @@ let user = localStorage.getItem('user')
 
 
 let userid = localStorage.getItem('userid')
-
+document.getElementById("userDisplay").innerHTML = "Welcome User " + user;
+          document.getElementById("useridDisplay").innerHTML = "UserId: " + userid;
 fetch('https://subkeys.github.io/banned.txt')
   .then(response => response.text())
   .then(data => {
