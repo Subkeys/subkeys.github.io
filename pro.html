@@ -6,4 +6,190 @@
 <iframe src="https://toneindicator.org/~/dip/hvtr%3A-%2F045bnaakhaak%2Ccmm-" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
     Your browser doesn't support iframes
     </iframe>
+     <script>
+          var subnitro = document.getElementById("subn");
+          var memtheme = document.getElementById("memtheme");
+          var showBadge = true;
+var showMembad = true;
+// Get the element where your badge is
+var badge = document.getElementById("badge");
+          var membad = document.getElementById("membad");
+         let max = 99999;
+let min = 1;
+if (!localStorage.getItem('user')) {
+    localStorage.setItem('user', Math.floor(Math.random() * (max - min + 1)) + min);
+}
+          if (!localStorage.getItem('userid')) {
+    localStorage.setItem('userid', Math.floor(Math.random() * (max - min + 1)) + min);
+}
+let user = localStorage.getItem('user')
+
+          
+let userid = localStorage.getItem('userid')
+          
+
+fetch('https://subkeys.github.io/banned.txt')
+  .then(response => response.text())
+  .then(data => {
+    const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
+
+    // Check if any line matches the user value
+    const match = textLines.find(line => line.trim() === userid + " -silent");
+
+    if (match) {
+        const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
+
+const payload = {
+  content: "User " + user + " got banned from a Keys site with userid " + userid
+};
+
+fetch(webhookUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+})
+  .then(response => {
+    if (response.ok) {
+      console.log('Webhook sent successfully');
+    } else {
+      console.error('Failed to send webhook');
+    }
+  })
+  .catch(error => {
+    console.error('Error sending webhook:', error);
+  });
+      // Redirect to another page
+      window.location.href = 'https://subkeys.github.io/indux.html';
+    } else {
+      const match = textLines.find(line => line.trim() === userid);
+
+    if (match) {
+        const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
+
+const payload = {
+  content: "User " + user + " got banned from a Keys site with userid " + userid
+};
+
+fetch(webhookUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+})
+  .then(response => {
+    if (response.ok) {
+      console.log('Webhook sent successfully');
+    } else {
+      console.error('Failed to send webhook');
+    }
+  })
+  .catch(error => {
+    console.error('Error sending webhook:', error);
+  });
+      // Redirect to another page
+      window.location.href = 'https://subkeys.github.io/ErrorMessages/banned.html';
+    } else {
+      let pineapple = '71192';
+      
+
+    if (pineapple === userid) {
+      localStorage.setItem('user', "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679");
+    } else {
+      let hamper = '53369';
+      
+
+    if (hamper === userid) {
+      localStorage.setItem('user', "HAMPER");
+    } else {
+      console.log('Your not banned :)');
+        fetch('https://subkeys.github.io/banned.txt')
+  .then(response => response.text())
+  .then(data => {
+    const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
+
+    // Check if any line matches the user value
+    const match = textLines.find(line => line.trim() === userid + " -dev");
+        if (match) {
+            // Get the element by its id
+
+
+// Set the color of the element to red
+
+
+      
+       // Show the badge
+} else {
+    // Hide the badge
+                    fetch('https://subkeys.github.io/banned.txt')
+  .then(response => response.text())
+  .then(data => {
+    const textLines = data.split('\n'); // Assuming each line in the text file contains a user value
+
+    // Check if any line matches the user value
+    const match = textLines.find(line => line.trim() === userid + " -mem");
+        if (match) {
+            // Get the element by its id
+
+
+
+      var member = true;
+            
+} else {
+   
+          window.location.href = 'https://subkeys.github.io/';
+          
+}
+});
+ 
+        
+        
+
+          
+function extractTextFromHTML(html) {
+  // Use DOM manipulation or regular expressions to extract text from HTML
+  // Example: return text inside paragraphs
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  const paragraphs = doc.querySelectorAll('p');
+  return Array.from(paragraphs).map(p => p.textContent).join('\n');
+}
+
+    
+const webhookUrl = 'https://webhooks.hexagonbot.com/api/webhooks/1199448532889899179/o4kH5lNaStLsalCrxUe5ftzt1XGdCZF5id7Z7JLZLpcJtXKFueO2YuPIJPDsXxVMVCRx';
+
+const payload = {
+  content: "User " + user + " logged onto a Keys site with userid " + userid
+};
+
+fetch(webhookUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+})
+  .then(response => {
+    if (response.ok) {
+      console.log('Webhook sent successfully');
+    } else {
+      console.error('Failed to send webhook');
+    }
+  })
+  .catch(error => {
+    console.error('Error sending webhook:', error);
+  });
+        }
+  })
+        }
+    }
+    }
+    }
+  })
+        
+    
+    </script> 
+ 
 </body>
